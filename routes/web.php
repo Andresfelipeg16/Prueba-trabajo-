@@ -21,18 +21,14 @@ Route :: get('/posts',function (){
     return "Aqui se listaran los post";
 });
 
-Route:: get ('/posts/post-1',function (){
-    return "Aqui se editara el post 1";
-});
+Route :: get ('/posts/{post}/{categoria?}',function ($post,$categoria = null){
 
-Route :: get ('/posts/post-2', function (){
-    return "Aqui se mostrarae el post 2";
+    if($categoria){
+        return "Aqui mostraremos el post $post, en la categoria $categoria";
+    }else{
+        return "Aqui mostraremos el post $post";
+    }
 });
-
-Route :: get ('/posts/post-3', function (){
-    return "Aqui se mostrarae el post 3";
-});
-
 //get: obtener informacion
 //post : crear informacion
 //put : actualizar
